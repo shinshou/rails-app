@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
   # ストロングパラメータの設定
   private
 
-  def comment_params
-    params.require(:comment).permit(:board_id, :name, :comment)
-  end
+  # def comment_params
+  #   params.require(:comment).permit(:board_id, :name, :comment)
+  # end
 end
