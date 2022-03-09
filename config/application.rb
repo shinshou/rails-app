@@ -16,5 +16,6 @@ module App
     config.i18n.default_locale = :ja
     #created_atとupdated_atの時間を日本時間に合わせる。
     config.time_zone = 'Tokyo'
+    config.assets.initialize_on_precompile = false
   end
 end
