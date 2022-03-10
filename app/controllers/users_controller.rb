@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id #session変数を使用。アクセスしてきたユーザーのセッションにIDを保存。
       redirect_to mypage_path
     else
-      redirect_to :back, flash: {
+      redirect_to root_path, flash: {
         user: user,
         error_messages: user.errors.full_messages
       }

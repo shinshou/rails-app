@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
   #ログイン済みユーザーかどうか確認。
   def logged_in_user
     unless logged_in?
+      flash[:alert] = "ログインしてください。"
       redirect_to root_path
     end
   end
