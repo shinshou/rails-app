@@ -1,5 +1,8 @@
 #ApplicationControllerクラスを継承してBoardsControllerクラスを作成。
 class BoardsController < ApplicationController
+  #ログイン済みユーザーのみが掲示板の操作をできるようにする。
+  before_action :logged_in_user, only:[:new, :create, :edit, :update, :destroy]
+
   #各アクションが実行される前に実行したいメソッドを記述する。before_action
   # onlyで適応するアクションを記述している。
   before_action :set_target_board, only: %i[show edit update destroy]
