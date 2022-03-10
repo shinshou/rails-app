@@ -6,10 +6,8 @@ class CommentsController < ApplicationController
       flash[:notice] = 'コメントを投稿しました。'
       redirect_to comment.board
     else
-      redirect_to :back, flash: {
-        comment: comment,
-        error_messages: comment.errors.full_messages
-      }#:backで１つ前の画面に戻る。
+      flash[:error_messages] = comment.errors.full_messages
+      redirect_to comment.board
     end
   end
 

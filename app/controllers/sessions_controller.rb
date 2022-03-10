@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to mypage_path
     else
-      render 'home/index'
+      flash[:alert] = 'ユーザー名またはパスワードが異なります。'
+      redirect_to root_path
     end
   end
 
