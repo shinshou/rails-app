@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+  #ログイン済みユーザーのみが掲示板の操作をできるようにする。
+  before_action :logged_in_user, only:[:new, :create, :edit, :update, :destroy]
+
   def create
     # commentオブジェクトを作成、フォームから受け取った値(comment_params)で初期化
     comment = Comment.new(comment_params)
